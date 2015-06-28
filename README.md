@@ -1,3 +1,3 @@
 # cineplex
-cinema-ticket-booking website
-it's amazing!
+cinema-ticket-booking website <br />
+it's amazing! <br />
