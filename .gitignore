@@ -1,3 +1,8 @@
 /CineplexJPA/build/*
 /CineplexEJB/build/*
 /CineplexWeb/build/*
+/Cineplex.rar
+/cineplex.sql
+/CineplexEAR/*
+/RemoteSystemsTempFiles/*
+/.metadata/*
