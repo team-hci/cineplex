@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>The Longest Movie</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>Home</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <display-name>JspAccessFilter</display-name>
+    <filter-name>JspAccessFilter</filter-name>
+    <filter-class>edu.nju.cineplex.filters.JspAccessFilter</filter-class>
+  </filter>
+  <filter>
+    <display-name>ManagerAccessFilter</display-name>
+    <filter-name>ManagerAccessFilter</filter-name>
+    <filter-class>edu.nju.cineplex.filters.ManagerAccessFilter</filter-class>
+  </filter>
+  <filter>
+    <display-name>WaiterAccessFilter</display-name>
+    <filter-name>WaiterAccessFilter</filter-name>
+    <filter-class>edu.nju.cineplex.filters.WaiterAccessFilter</filter-class>
+  </filter>
+  <filter>
+    <display-name>EncodeFilter</display-name>
+    <filter-name>EncodeFilter</filter-name>
+    <filter-class>edu.nju.cineplex.filters.EncodeFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>JspAccessFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>ManagerAccessFilter</filter-name>
+    <url-pattern>*.manager</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+    <filter-name>WaiterAccessFilter</filter-name>
+    <url-pattern>*.waiter</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>EncodeFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+<!--   <servlet>
+    <servlet-name>AutoUpdater</servlet-name>
+    <servlet-class>edu.nju.cineplex.servlets.AutoUpdater</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet> -->
+<!--   <listener>
+  	<listener-class>edu.nju.cineplex.listener.DailyTaskListener</listener-class>
+  </listener> -->
+</web-app>
