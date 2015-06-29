@@ -73,7 +73,9 @@
 <div class="modal fade" id="lr-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-
+	<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
       <div class="modal-body">
         <ul class="nav nav-tabs" role="tablist">
 		    <li role="presentation" class="active"><a href="#login-pane" aria-controls="login-pane" role="tab" data-toggle="tab">登录</a></li>
