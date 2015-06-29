@@ -27,6 +27,10 @@
 </p>
 
 <span class="mylabel">相关放映</span>
+<% 
+	PlanItem[] plans = activityInfo.getPlans();
+	if(plans.length > 0){
+%>
 <table class="table table-striped table-hover">
 	<tr>
 		<th>电影名称</th>
@@ -35,11 +39,10 @@
 		<th>价格</th>
 	</tr>
 	<%
-		PlanItem[] plans = activityInfo.getPlans();
 		for(int i=0;i<plans.length;i++){
 	%>
 	<tr>
-		<td><%=plans[i].getMoviename() %></td>
+		<td><a href="/CineplexWeb/MovieDetail?m=<%=plans[i].getMovieid() %>"><%=plans[i].getMoviename() %></a></td>
 		<td><%=plans[i].getPlandate()+" "+plans[i].getPlantime() %></td>
 		<td><%=plans[i].getHall() %></td>
 		<td><%=plans[i].getPlanprice() %></td>
@@ -48,7 +51,9 @@
 		}
 	%>
 </table>
-
+<% } else { %>
+	<p class="text-center">无相关放映</p>
+<% } %>
 <br />
 <form action="" method="post" class="text-center">
 <%

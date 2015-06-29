@@ -432,7 +432,7 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 	@Override
 	public List<PlanItem> getPlansByActivityId(int activityid) {
 		// TODO Auto-generated method stub
-		Query query =em.createQuery("select new edu.nju.cineplex.utildata.PlanItem(p.planid,m.moviename,p.hall,p.plandate,p.plantime,p.planprice) from Plan p,Movie m,ActivityPlan ap where ap.activityid="+activityid+" and ap.planid=p.planid and p.movieid=m.movieid");
+		Query query =em.createQuery("select new edu.nju.cineplex.utildata.PlanItem(p.planid,m.moviename,p.hall,p.plandate,p.plantime,p.planprice,p.movieid) from Plan p,Movie m,ActivityPlan ap where ap.activityid="+activityid+" and ap.planid=p.planid and p.movieid=m.movieid");
 		return query.getResultList();
 	}
 

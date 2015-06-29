@@ -26,11 +26,11 @@
   	
 	<div id="demo1" class="slideBox div-gap" style="margin-left:auto;margin-right:auto">
 	  <ul class="items">
-	    <li><a href="#" title="黑暗骑士"><img src="img/1.jpg"></a></li>
-	    <li><a href="#" title="霍比特人"><img src="img/2.jpg"></a></li>
-	    <li><a href="#" title="沉睡魔咒"><img src="img/3.jpg"></a></li>
-	    <li><a href="#" title="星际穿越"><img src="img/4.jpg"></a></li>
-	    <li><a href="#" title="霍比特人"><img src="img/5.jpg"></a></li>
+	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=40" title="黑暗骑士"><img src="img/1.jpg"></a></li>
+	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=41" title="霍比特人"><img src="img/2.jpg"></a></li>
+	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=42" title="沉睡魔咒"><img src="img/3.jpg"></a></li>
+	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=43" title="星际穿越"><img src="img/4.jpg"></a></li>
+	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=41" title="霍比特人"><img src="img/5.jpg"></a></li>
 	  </ul>
 	</div>
   
@@ -92,6 +92,8 @@
   		<div class="col-md-2 col-sm-3 col-xs-4 movie_img">
   			<a href="/CineplexWeb/MovieDetail?m=<jsp:getProperty name="newItem" property="movieid" />" class="thumbnail">
   				<img title="<jsp:getProperty name="newItem" property="moviename" />" alt="<jsp:getProperty name="newItem" property="moviename" />" src="<jsp:getProperty name="newItem" property="movieposter" />">
+  				<span class="text-overflow"><nobr><jsp:getProperty name="newItem" property="moviename" /></nobr></span>
+				<span class="right smallgrade"><jsp:getProperty name="newItem" property="moviegrade" /></span>
   			</a>
   		</div>
 	<%

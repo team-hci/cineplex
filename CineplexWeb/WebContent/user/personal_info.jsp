@@ -124,6 +124,7 @@
 	
 	<div class="tab-pane fade in div-gap" id="consumption">
 		<div class="row">
+		<% if(consumptions.size() > 0){ %>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
@@ -151,11 +152,15 @@
 				%>
 				</tbody>
 			</table>
+		<%} else { %>
+			<p class="text-center">暂无消费纪录</p>
+		<% } %>
 		</div>
 	</div>
 	
 	<div class="tab-pane fade in div-gap" id="pay">
 		<div class="row">
+		<% if(payments.size() > 0){ %>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
@@ -179,6 +184,9 @@
 				%>
 				</tbody>
 			</table>
+		<% } else { %>
+			<p class="text-center">暂无充值纪录</p>
+		<% } %>
 		</div>
 	</div>
 </div>
