@@ -18,6 +18,7 @@
 	<h3>审查放映计划</h3>
 </div>
 <div class="div-gap">
+	<% if(plans.size() > 0){ %>
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
@@ -50,6 +51,9 @@
 		%>
 		</tbody>
 	</table>
+	<% } else { %>
+		<p class="text-center">暂无待审核计划</p>
+	<% } %>
 </div>
 
 <jsp:include page="/pages/footer.html" flush="true" />

@@ -8,8 +8,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
 				<li><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
-				<li><a href="#">帮助</a></li>
-				<li><a href="#">关于</a></li>
+				<li><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
 				<%
 					if(session.getAttribute("userid")==null){//游客
 				%>

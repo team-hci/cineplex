@@ -9,7 +9,7 @@
 String className="com.mysql.jdbc.Driver";
 String url="jdbc:mysql://localhost:3306/cineplex";
 String user="root";
-String password="root";
+String password="";
 Connection conn; 
 Statement st;
 
@@ -24,7 +24,7 @@ String root = request.getSession().getServletContext().getRealPath("/");
 
 //设置上传文件的保存路径（绝对路径/物理路径www.mwcly.cn）
 
-String savePath = "D:\\Cineplex\\CineplexWeb\\WebContent\\posters\\";
+String savePath = "/Users/huangjiawei/Projects/Cineplex/CineplexWeb/WebContent/posters/";
 String showPath = "/CineplexWeb/posters/";
 
 //声明SmartUpload类对象
