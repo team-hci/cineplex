@@ -86,6 +86,7 @@
 <script type="text/javascript" src="/CineplexWeb/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$(".activityLab").addClass("active");
 	$("#sort"+<%=request.getAttribute("sort") %>).addClass("active");
 	$("#page"+<%=request.getAttribute("page") %>).addClass("active");
 	if(<%=request.getAttribute("page") %>==1){
