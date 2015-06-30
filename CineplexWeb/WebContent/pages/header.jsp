@@ -73,14 +73,12 @@
 <div class="modal fade" id="lr-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	<div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
       <div class="modal-body">
-        <ul class="nav nav-tabs" role="tablist">
+      	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      	<ul class="nav nav-tabs" role="tablist">
 		    <li role="presentation" class="active"><a href="#login-pane" aria-controls="login-pane" role="tab" data-toggle="tab">登录</a></li>
 		    <li role="presentation"><a href="#register-pane" aria-controls="register-pane" role="tab" data-toggle="tab">注册</a></li>
-		  </ul>
+		</ul>
         <div class="tab-content">
 		  <div role="tabpanel" class="tab-pane fade in active" id="login-pane">
 		 	<form role="form" action="Login" method="post" onsubmit="return login();">
