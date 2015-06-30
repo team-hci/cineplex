@@ -12,7 +12,7 @@
 				<%
 					if(session.getAttribute("userid")==null){//游客
 				%>
-				<li><a href="javascript:void(0);" data-toggle="modal" data-target="#lr-modal">登录/注册</a></li>
+				<li><a href="javascript:void(0);" class="loginLab" data-toggle="modal" data-target="#lr-modal">登录/注册</a></li>
 				<%
 					}else if(((String)session.getAttribute("userlevel")).equals("经理")){//经理
 				%>
@@ -76,8 +76,8 @@
       <div class="modal-body">
       	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       	<ul class="nav nav-tabs" role="tablist">
-		    <li role="presentation" class="active"><a href="#login-pane" aria-controls="login-pane" role="tab" data-toggle="tab">登录</a></li>
-		    <li role="presentation"><a href="#register-pane" aria-controls="register-pane" role="tab" data-toggle="tab">注册</a></li>
+		    <li role="presentation" class="active"><a href="#login-pane" class="loginLab" aria-controls="login-pane" role="tab" data-toggle="tab">登录</a></li>
+		    <li role="presentation"><a href="#register-pane" class="regLab" aria-controls="register-pane" role="tab" data-toggle="tab">注册</a></li>
 		</ul>
         <div class="tab-content">
 		  <div role="tabpanel" class="tab-pane fade in active" id="login-pane">
@@ -117,7 +117,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
+<script type="text/javascript" src="/CineplexWeb/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 var xmlHttp;
 var loading = "<img src='/CineplexWeb/pic/loading.gif'>";
@@ -202,6 +202,14 @@ function checkKey(){
 		return false;
 	return true;
 }
+
+$(".loginLab").click(function(){
+	setTimeout(function(){$("#id").focus();},200);
+});
+$(".regLab").click(function(){
+	setTimeout(function(){$("#rname").focus();},200);
+});
+
 </script>
 
 <div class="container">
@@ -220,6 +228,13 @@ function checkKey(){
 		              </button>
 		           </span>
 		        </div><!-- /input-group -->
+		        <div style="margin:1% 0 0 1%">
+		        	<a href="<%=request.getContextPath() %>/MovieDetail?m=43" style="margin-right:3%">星际穿越</a>
+		        	<a href="<%=request.getContextPath() %>/MovieDetail?m=41" style="margin-right:3%">霍比特人</a>
+		        	<a href="<%=request.getContextPath() %>/MovieDetail?m=37" style="margin-right:3%">澳门风云</a>
+		        	<a href="<%=request.getContextPath() %>/MovieDetail?m=26" style="margin-right:3%">四大名捕</a>
+		        	<a href="<%=request.getContextPath() %>/MovieDetail?m=24" style="margin-right:3%">亲爱的</a>
+		        </div>
 	        </form>
 	  	</div>
 <!--   		<div id="top-right" class="col-md-4">

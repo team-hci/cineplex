@@ -40,46 +40,55 @@
 	<div class="tab-pane fade in active div-gap" id="info">
 		<div class="row">
 			<div class="col-md-offset-3 col-md-9" id="info-show">
-			<p>
-				<span class="mylabel">会员号：</span>
-				<jsp:getProperty name="userInfo" property="userid" />
-			</p>
-			<p>
-				<span class="mylabel">会员名称：</span>
-				<jsp:getProperty name="userInfo" property="username" />
-			</p>
-			<p>
-				<span class="mylabel">银行卡号：</span>
-				<jsp:getProperty name="userInfo" property="cardid" />
-			</p>
-			<p>
-				<span class="mylabel">用户状态：</span>
-				<jsp:getProperty name="userInfo" property="level" />
-			</p>
-			<p>
-				<span class="mylabel">积分：</span>
-				<jsp:getProperty name="userInfo" property="credit" />
-				<button class="btn btn-link" type="button" onclick="changeMoney()">兑换金额</button>
-			</p>
-			<p>
-				<span class="mylabel">余额：</span>
-				<jsp:getProperty name="userInfo" property="balance" />
-			</p>
-			<p>
-				<span class="mylabel">年龄：</span>
-				<jsp:getProperty name="userInfo" property="age" />
-			</p>
-			<p>
-				<span class="mylabel">性别：</span>
-				<jsp:getProperty name="userInfo" property="gender" />
-			</p>
-			<p>
-				<span class="mylabel">地址：</span>
-				<jsp:getProperty name="userInfo" property="location" />
-			</p>
-			<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#pay-modal">充值</button>
-			<button class="btn btn-default" type="button" onclick="modify()">修改资料</button>
-			<button class="btn btn-default" type="button" onclick="cancelMember()">取消会员</button>
+				<div style="width:40%;float:left">
+					<p>
+					<span class="mylabel">会员号：</span>
+					<jsp:getProperty name="userInfo" property="userid" />
+					</p>
+					<p>
+						<span class="mylabel">会员名称：</span>
+						<jsp:getProperty name="userInfo" property="username" />
+					</p>
+					<p>
+						<span class="mylabel">年龄：</span>
+						<jsp:getProperty name="userInfo" property="age" />
+					</p>
+					<p>
+						<span class="mylabel">性别：</span>
+						<jsp:getProperty name="userInfo" property="gender" />
+					</p>
+					<p>
+						<span class="mylabel">地址：</span>
+						<jsp:getProperty name="userInfo" property="location" />
+					</p>
+				</div>
+			
+			<div style="width:40%;float:left">
+				<p>
+					<span class="mylabel">银行卡号：</span>
+					<jsp:getProperty name="userInfo" property="cardid" />
+				</p>
+				<p>
+					<span class="mylabel">用户状态：</span>
+					<jsp:getProperty name="userInfo" property="level" />
+				</p>
+				<p>
+					<span class="mylabel">积分：</span>
+					<jsp:getProperty name="userInfo" property="credit" />
+					<button class="btn btn-link" type="button" onclick="changeMoney()">兑换金额</button>
+				</p>
+				<p>
+					<span class="mylabel">余额：</span>
+					<jsp:getProperty name="userInfo" property="balance" />
+				</p>
+			</div>
+			
+			<div style="width:100%;float:left;margin:2% 0 0 15%">
+				<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#pay-modal">充值</button>
+				<button class="btn btn-default" type="button" onclick="modify()">修改资料</button>
+				<button class="btn btn-default" type="button" onclick="cancelMember()">取消会员</button>
+			</div>
+			
 			</div>
 			
 			<div class="col-md-offset-2 col-md-6 hidden" id="info-modify">
