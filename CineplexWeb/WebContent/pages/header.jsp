@@ -6,13 +6,13 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
-				<li><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
-				<li><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
+				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
+				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
+				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
 				<%
 					if(session.getAttribute("userid")==null){//游客
 				%>
-				<li><a href="javascript:void(0);" class="loginLab" data-toggle="modal" data-target="#lr-modal">登录/注册</a></li>
+				<li class="loginLab"><a href="javascript:void(0);" class="loginRef" data-toggle="modal" data-target="#lr-modal">登录/注册</a></li>
 				<%
 					}else if(((String)session.getAttribute("userlevel")).equals("经理")){//经理
 				%>
@@ -76,8 +76,8 @@
       <div class="modal-body">
       	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       	<ul class="nav nav-tabs" role="tablist">
-		    <li role="presentation" class="active"><a href="#login-pane" class="loginLab" aria-controls="login-pane" role="tab" data-toggle="tab">登录</a></li>
-		    <li role="presentation"><a href="#register-pane" class="regLab" aria-controls="register-pane" role="tab" data-toggle="tab">注册</a></li>
+		    <li role="presentation" class="active"><a href="#login-pane" class="loginRef" aria-controls="login-pane" role="tab" data-toggle="tab">登录</a></li>
+		    <li role="presentation"><a href="#register-pane" class="regRef" aria-controls="register-pane" role="tab" data-toggle="tab">注册</a></li>
 		</ul>
         <div class="tab-content">
 		  <div role="tabpanel" class="tab-pane fade in active" id="login-pane">
@@ -203,10 +203,10 @@ function checkKey(){
 	return true;
 }
 
-$(".loginLab").click(function(){
+$(".loginRef").click(function(){
 	setTimeout(function(){$("#id").focus();},200);
 });
-$(".regLab").click(function(){
+$(".regRef").click(function(){
 	setTimeout(function(){$("#rname").focus();},200);
 });
 

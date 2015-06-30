@@ -165,6 +165,7 @@
 <script type="text/javascript" src="/CineplexWeb/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$(".movieLab").addClass("active");
 	$("#type"+<%=request.getAttribute("type") %>).addClass("active");
 	$("#region"+<%=request.getAttribute("region") %>).addClass("active");
 	$("#sort"+<%=request.getAttribute("sort") %>).addClass("active");

@@ -30,6 +30,10 @@
 
 <script type="text/javascript" src="/CineplexWeb/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="/CineplexWeb/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
-
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".helpLab").addClass("active");
+});
+</script>
 </body>
 </html>
