@@ -56,6 +56,15 @@
 <% } %>
 <br />
 <form action="" method="post" class="text-center">
+
+<%
+	int tb = (int)request.getAttribute("tb");
+	if(session.getAttribute("userid")==null){
+%>
+	<p class="text-center">登陆后参加活动</p>
+<%
+	}else if(tb==1){
+%>
 <%
 	ActivityQuestion[] questions = activityInfo.getQuestions();
 	int index = 0;
@@ -91,14 +100,6 @@
 	}
 %>
 	<br />
-<%
-	int tb = (int)request.getAttribute("tb");
-	if(session.getAttribute("userid")==null){
-%>
-	<p class="text-center">登陆后参加活动</p>
-<%
-	}else if(tb==1){
-%>
 	<button type="button" class="btn btn-primary" onclick="submitChoice()">提交</button>
 <%
 	}else if(tb==0){

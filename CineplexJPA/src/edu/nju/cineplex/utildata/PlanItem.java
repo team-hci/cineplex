@@ -16,6 +16,8 @@ public class PlanItem implements Serializable {
 	private String plantime;
 	private int planprice;
 	
+	private int planStatus;
+	
 	public PlanItem(){}
 	
 	
@@ -37,9 +39,16 @@ public class PlanItem implements Serializable {
 		this.plantime = plantime;
 		this.planprice = planprice;
 	}
-
-	public int getMovieid() {
-		return movieid;
+	
+	public PlanItem(int planid,String moviename,int hall,String plandate,String plantime,int planprice,int movieid,int planStatus){
+		this.planid = planid;
+		this.moviename = moviename;
+		this.hall = hall;
+		this.plandate = plandate;
+		this.plantime = plantime;
+		this.planprice = planprice;
+		this.movieid = movieid;
+		this.planStatus = planStatus;
 	}
 
 	public void setMovieid(int movieid) {
@@ -93,5 +102,22 @@ public class PlanItem implements Serializable {
 	public void setPlantime(String plantime) {
 		this.plantime = plantime;
 	}
+
+
+	public int getPlanStatus() {
+		return planStatus;
+	}
+
+
+	public void setPlanStatus(int planStatus) {
+		this.planStatus = planStatus;
+	}
+
+
+	public int getMovieid() {
+		return movieid;
+	}
+	
+	
 	
 }

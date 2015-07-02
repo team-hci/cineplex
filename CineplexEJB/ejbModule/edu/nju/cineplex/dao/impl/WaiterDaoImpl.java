@@ -161,7 +161,7 @@ public class WaiterDaoImpl extends BaseDaoImpl implements WaiterDao {
 	public List<PlanItem> getAllComingPlans() {
 		// TODO Auto-generated method stub
 		String nowDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-		Query query = em.createQuery("select new edu.nju.cineplex.utildata.PlanItem(p.planid,m.moviename,p.hall,p.plandate,p.plantime,p.planprice,p.movieid) from Plan p,Movie m where p.movieid=m.movieid and p.plandate>='"+nowDate+"' and p.planpass>=0 order by p.plandate asc,p.plantime asc");
+		Query query = em.createQuery("select new edu.nju.cineplex.utildata.PlanItem(p.planid,m.moviename,p.hall,p.plandate,p.plantime,p.planprice,p.movieid,p.planpass) from Plan p,Movie m where p.movieid=m.movieid and p.plandate>='"+nowDate+"' and p.planpass>=0 order by p.plandate asc,p.plantime asc");
 		return query.getResultList();
 	}
 

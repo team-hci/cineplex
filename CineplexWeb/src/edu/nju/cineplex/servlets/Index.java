@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import edu.nju.cineplex.model.Activity;
 import edu.nju.cineplex.model.Movie;
@@ -43,7 +44,17 @@ public class Index extends HttpServlet {
 		request.setAttribute("newActivities", alist);
 		request.setAttribute("comingMovies", comingMovies);
 		
-		request.getRequestDispatcher("pages/home.jsp").forward(request, response);
+		String level = (String)request.getSession(true).getAttribute("userlevel");
+		if(level == null)
+			request.getRequestDispatcher("pages/home.jsp").forward(request, response);
+		else if(level.equals("经理"))
+			request.getRequestDispatcher("/CheckPlan.manager").forward(request, response);
+		else if(level.equals("服务员")){
+			
+			request.getRequestDispatcher("/MovieList").forward(request,response);
+		}
+		else 
+			request.getRequestDispatcher("pages/home.jsp").forward(request, response);			
 	}
 
 	/**

@@ -32,6 +32,7 @@ public class Logout extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		if(session!=null){
 			session.removeAttribute("userid");
+			session.removeAttribute("userlevel");
 			response.sendRedirect(request.getContextPath());
 		}
 	}

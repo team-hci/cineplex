@@ -236,7 +236,7 @@ function pickSeat(s){
 		}
 		seat.toggleClass("success");
 	}
-	$("#total-price").html(pickedSeats.length*finalPrice);
+	$("#total-price").html(Math.round(pickedSeats.length*finalPrice));
 }
 
 function buy(){

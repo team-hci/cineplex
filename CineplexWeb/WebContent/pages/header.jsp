@@ -5,68 +5,100 @@
 			<a class="navbar-brand" href="/CineplexWeb">LongestMovie</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
-				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
-				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
 				<%
 					if(session.getAttribute("userid")==null){//游客
 				%>
+				<ul class="nav navbar-nav">
+				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
+				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
+				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
+				</ul>
+				
+				
+				<ul class="nav navbar-nav navbar-right">
 				<li class="loginLab"><a href="javascript:void(0);" class="loginRef" data-toggle="modal" data-target="#lr-modal">登录/注册</a></li>
+				</ul>
+				
 				<%
 					}else if(((String)session.getAttribute("userlevel")).equals("经理")){//经理
 				%>
-				<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		          <%=session.getAttribute("username") %>
-		          <span class="caret"></span>
-		          </a>
-		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="<%=request.getContextPath()+"/CheckPlan.manager" %>">审查放映计划</a></li>
-		            <li><a href="<%=request.getContextPath()+"/MemberStatistics.manager"%>">会员信息统计</a></li>
+				<ul class="nav navbar-nav">
+				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
+				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
+				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
+				<li><a href="<%=request.getContextPath()+"/CheckPlan.manager" %>">审查放映计划</a></li>
+				<li><a href="<%=request.getContextPath()+"/MemberStatistics.manager"%>">会员信息统计</a></li>
 		            <li><a href="<%=request.getContextPath()+"/MonthlyStatistics.manager"%>">影院使用统计</a></li>
-		            <li class="divider"></li>
-		            <li><a href="Logout">退出</a></li>
-		          </ul>
-		        </li>
+		        </ul>
+		        
+		        <ul class="nav navbar-nav navbar-right">
+		        	<li style="float:right">
+						<a href="Logout">退出</a>
+					</li>
+				
+					<li style="float:right">
+		          		<a><%=session.getAttribute("username") %></a>
+					</li>
+		        
+		        </ul>
+		       
+		        
+		        
 				<%
 					}else if(((String)session.getAttribute("userlevel")).equals("服务员")){//服务员
 				%>
-				<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		          <%=session.getAttribute("username") %>
-		          <span class="caret"></span>
-		          </a>
-		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="<%=request.getContextPath()+"/MakePlan.waiter"%>">制定放映计划</a></li>
+				<ul class="nav navbar-nav">
+				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
+				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
+				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
+				
+						            <li><a href="<%=request.getContextPath()+"/MakePlan.waiter"%>">制定放映计划</a></li>
 		            <li><a href="<%=request.getContextPath()+"/AddMovie.waiter"%>">添加影片</a></li>
 		            <li><a href="<%=request.getContextPath()+"/MakeActivity.waiter"%>">制定活动</a></li>
 		            <li><a href="<%=request.getContextPath()+"/CheckUser.waiter"%>">查询会员</a></li>
 		            <li><a href="<%=request.getContextPath()+"/ModifyPlan.waiter"%>">修改放映计划</a></li>
-		            <li class="divider"></li>
-		            <li><a href="Logout">退出</a></li>
-		          </ul>
-		        </li>
+		            
+		            
+		            </ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+		        	<li style="float:right">
+						<a href="Logout">退出</a>
+					</li>
+				
+					<li style="float:right">
+		          		<a><%=session.getAttribute("username") %></a>
+					</li>
+		        
+		        </ul>
+				
+				
 				<%
 					}else{//会员
 				%>
-				<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-		          <%=session.getAttribute("username") %>
-		          <span class="caret"></span>
-		          </a>
-		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="<%=request.getContextPath()+"/PersonalInfo" %>">个人信息</a></li>
-		            <!-- <li><a href="#">订单</a></li>
-		            <li><a href="#">活动</a></li> -->
-		            <li class="divider"></li>
-		            <li><a href="Logout">退出</a></li>
-		          </ul>
-		        </li>
+				<ul class="nav navbar-nav">
+				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
+				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
+				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
+				<li><a href="<%=request.getContextPath()+"/PersonalInfo" %>">个人信息</a></li>
+		        </ul>
+		        
+		        
+		        <ul class="nav navbar-nav navbar-right">
+		        	<li style="float:right">
+						<a href="Logout">退出</a>
+					</li>
+				
+					<li style="float:right">
+		          		<a><%=session.getAttribute("username") %></a>
+					</li>
+		        
+		        </ul>
+		        
 				<%
 					}
 				%>
-			</ul>
+			
 		</div>
     </div>
 </nav>

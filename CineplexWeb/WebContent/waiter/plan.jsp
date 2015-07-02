@@ -21,7 +21,12 @@
 	<h2 class="bottom-line">制定放映计划</h2>
 	
 	<div class="div-gap">
-		<p class="mylabel text-center">现有计划</p>
+	<ul class="nav nav-tabs">
+	<li class="active">
+	<p class="mylabel text-center">现有计划</p>
+	</li>
+	</ul>
+		
 		<% if(plans.size() > 0){ %>
 		<table class="table table-striped table-hover">
 			<thead>
@@ -54,6 +59,7 @@
 		<% } else { %>
 			<p class="text-center">暂无</p>
 		<% } %>
+		
 	</div>
 	
 	<br />
@@ -142,7 +148,14 @@ function checkPlan(){
 	if(mid=="" || hall=="" || date=="" || time=="" || price==""){
 		$("#hint").html("请填写完整信息！");
 		return false;
-	}
+	}else{
+
+		var re = /^[1-9]+[0-9]*]*$/;
+		if(!re.test(price)){
+			$("#hint").html("价格为正整数！");
+			return false;
+			}
+		}
 	
 	return true;
 }
