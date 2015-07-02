@@ -166,9 +166,17 @@ function processor1(){
 	if (xmlHttp.readyState==4 && xmlHttp.status==200){
 		var response = xmlHttp.responseText;
 		response = response.trim();
-		if(response=="yes"){
-			location.reload();
-		}else if(response=="no"){
+		if(response=="ok"){
+			//location.reload();
+			window.location.href="Home"
+		}
+		else if(response=="manager"){
+			window.location.href="CheckPlan.manager";
+		}
+		else if(response=="waiter"){
+			window.location.href="MovieList";
+		}
+		else if(response=="no"){
 			document.getElementById("login_hint").innerHTML="用户名或密码错误！";
 			document.getElementById("password").value = "";
 			document.getElementById("password").focus();

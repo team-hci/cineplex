@@ -56,7 +56,18 @@ public class Login extends HttpServlet {
 			request.getSession(true).setAttribute("userid", result.getUserid());
 			request.getSession(true).setAttribute("userlevel", result.getLevel());
 			request.getSession(true).setAttribute("username", result.getUsername());
-			out.println("yes");
+//			out.println("yes");
+			
+			String level = (String)request.getSession(true).getAttribute("userlevel");
+			if(level == null)
+				out.println("ok");
+			else if(level.equals("经理"))
+				out.println("manager");
+			else if(level.equals("服务员")){
+				out.println("waiter");
+			}
+			else 
+				out.println("ok");
 		}
 		else{//failure
 //			request.getRequestDispatcher("error.html").forward(request, response);

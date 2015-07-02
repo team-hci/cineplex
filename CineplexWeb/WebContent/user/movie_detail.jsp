@@ -16,16 +16,17 @@
 	<div class="col-md-3 col-sm-4 col-xs-12 col-md-offset-1">
 		<img alt="" title="" src="<jsp:getProperty name="movieInfo" property="movieposter" />">
 		<div class="row">
-			<span class="largegrade"><jsp:getProperty name="movieInfo" property="grade" /></span><span class="mylabel">（<jsp:getProperty name="movieInfo" property="gcount" />评分）</span>
 		<%
 			int valuation = (int)request.getAttribute("valuation");
 			if(valuation>0){
 		%>
+		<span class="largegrade"><jsp:getProperty name="movieInfo" property="grade" /></span><span class="mylabel">（<jsp:getProperty name="movieInfo" property="gcount" />评分）</span>
 			<span>已评<%=valuation %>分</span>
 		<%
 			}else if(session.getAttribute("userid")!=null){
 		%>
-			<form action="Evaluate" method="post" class="form-inline">
+			<form action="Evaluate" method="post" class="form-inline" style="margin-left: 20px;">
+			<span class="largegrade"><jsp:getProperty name="movieInfo" property="grade" /></span><span class="mylabel">（<jsp:getProperty name="movieInfo" property="gcount" />评分）</span>
 				<select class="form-control" id="valuation" name="valuation" style="width:100px">
 				  <option value="10">10分</option>
 				  <option value="9">9分</option>
@@ -176,7 +177,7 @@
 		}else{
 %>
 <div class="row">
-	<iframe src="BuyTicket?m=<jsp:getProperty name="movieInfo" property="movieid" />" width="100%" height="800px" frameborder="0" id="seat_frame">
+	<iframe src="BuyTicket?m=<jsp:getProperty name="movieInfo" property="movieid" />" width="100%" frameborder="0" id="seat_frame" onLoad="iFrameHeight()">
 	</iframe>
 </div>
 <%
@@ -201,6 +202,14 @@ function evaluate(){
 	alert("fuck");
 
 }
+
+function iFrameHeight() {
+	var ifm= document.getElementById("seat_frame");
+	var subWeb = document.frames ? document.frames["seat_frame"].document : ifm.contentDocument;
+	if(ifm != null && subWeb != null) {
+	ifm.height = subWeb.body.scrollHeight;
+	}
+	} 
 
 </script>
 </body>
