@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.nju.cineplex.model.Movie;
+import edu.nju.cineplex.service.ManagerService;
 import edu.nju.cineplex.service.WaiterService;
 import edu.nju.cineplex.utildata.PlanItem;
 
@@ -22,6 +23,7 @@ public class MakePlan extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	@EJB WaiterService waiterService;
+	@EJB ManagerService managerService;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -41,8 +43,15 @@ public class MakePlan extends HttpServlet {
 //		System.out.println(list.get(0).getName());
 		request.setAttribute("movies", list);
 		
-		List<PlanItem> plans = waiterService.getAllComingPlans();
-		request.setAttribute("plans", plans);
+		List<PlanItem> notHandledPlans = managerService.getToBeCheckedPlan() ;
+		request.setAttribute("plans1", notHandledPlans);
+		
+		List<PlanItem> passedPlans = waiterService.getPassedPlans() ;
+		request.setAttribute("plans2", passedPlans);
+		
+		List<PlanItem> rejectedPlans = waiterService.getBlockedPlans() ;
+		request.setAttribute("plans3", rejectedPlans);
+		
 		
 		if(pid!=null){
 			int planid = Integer.parseInt(pid);

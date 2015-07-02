@@ -14,7 +14,9 @@
 
 <jsp:useBean id="movies" type="java.util.List<Movie>" scope="request" />
 <jsp:useBean id="item" class="edu.nju.cineplex.model.Movie" scope="page" />
-<jsp:useBean id="plans" type="java.util.List<PlanItem>" scope="request" />
+<jsp:useBean id="plans1" type="java.util.List<PlanItem>" scope="request" />
+<jsp:useBean id="plans2" type="java.util.List<PlanItem>" scope="request" />
+<jsp:useBean id="plans3" type="java.util.List<PlanItem>" scope="request" />
 <jsp:useBean id="planItem" class="edu.nju.cineplex.utildata.PlanItem" scope="page" />
 
 <div id="make_plan">
@@ -23,11 +25,18 @@
 	<div class="div-gap">
 	<ul class="nav nav-tabs">
 	<li class="active">
-	<p class="mylabel text-center">现有计划</p>
+<a href="#tab1" data-toggle="tab"><p class="mylabel text-center">未审批计划</p></a>
+	</li>
+	<li>
+	<a href="#tab2" data-toggle="tab"><p class="mylabel text-center">已通过计划</p></a>
+	</li>
+		<li>
+		<a href="#tab3" data-toggle="tab"><p class="mylabel text-center">未通过计划</p></a>
 	</li>
 	</ul>
-		
-		<% if(plans.size() > 0){ %>
+	
+	<div class="tab-content"><div class="tab-pane active" id="tab1">
+		<% if(plans1.size() > 0){ %>
 		<table class="table table-striped table-hover">
 			<thead>
 				<tr>
@@ -39,8 +48,45 @@
 			</thead>
 			<tbody>
 			<%
-				for(int i=0;i<plans.size();i++){
-					pageContext.setAttribute("planItem", plans.get(i));
+				for(int i=0;i<plans1.size();i++){
+					pageContext.setAttribute("planItem", plans1.get(i));
+			%>
+				<tr>
+					<td><a href="MakePlan.waiter?p=<jsp:getProperty name='planItem' property='planid' />"><jsp:getProperty name="planItem" property="moviename" /></a></td>
+					<td><jsp:getProperty name="planItem" property="hall" /></td>
+					<td>
+						<jsp:getProperty name="planItem" property="plandate" />
+						&nbsp;<jsp:getProperty name="planItem" property="plantime" />
+					</td>
+					<td><jsp:getProperty name="planItem" property="planprice" /></td>
+				</tr>
+			<%
+				}
+			%>
+			</tbody>
+		</table>
+		<% } else { %>
+			<p class="text-center">暂无</p>
+		<% } %>
+		
+		</div>
+		
+		
+		<div class="tab-pane" id="tab2">
+		<% if(plans2.size() > 0){ %>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>电影名称</th>
+					<th>大厅</th>
+					<th>时间</th>
+					<th>票价</th>
+				</tr>
+			</thead>
+			<tbody>
+			<%
+				for(int i=0;i<plans2.size();i++){
+					pageContext.setAttribute("planItem", plans2.get(i));
 			%>
 				<tr>
 					<td><jsp:getProperty name="planItem" property="moviename" /></td>
@@ -59,6 +105,45 @@
 		<% } else { %>
 			<p class="text-center">暂无</p>
 		<% } %>
+		</div>
+		
+		<div class="tab-pane" id="tab3">
+		<% if(plans3.size() > 0){ %>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>电影名称</th>
+					<th>大厅</th>
+					<th>时间</th>
+					<th>票价</th>
+				</tr>
+			</thead>
+			<tbody>
+			<%
+				for(int i=0;i<plans3.size();i++){
+					pageContext.setAttribute("planItem", plans3.get(i));
+			%>
+				<tr>
+					<td><jsp:getProperty name="planItem" property="moviename" /></td>
+					<td><jsp:getProperty name="planItem" property="hall" /></td>
+					<td>
+						<jsp:getProperty name="planItem" property="plandate" />
+						&nbsp;<jsp:getProperty name="planItem" property="plantime" />
+					</td>
+					<td><jsp:getProperty name="planItem" property="planprice" /></td>
+				</tr>
+			<%
+				}
+			%>
+			</tbody>
+		</table>
+		<% } else { %>
+			<p class="text-center">暂无</p>
+		<% } %>
+		</div>
+		
+		
+		</div>
 		
 	</div>
 	

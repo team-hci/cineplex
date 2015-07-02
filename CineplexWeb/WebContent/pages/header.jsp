@@ -56,7 +56,6 @@
 		            <li><a href="<%=request.getContextPath()+"/AddMovie.waiter"%>">添加影片</a></li>
 		            <li><a href="<%=request.getContextPath()+"/MakeActivity.waiter"%>">制定活动</a></li>
 		            <li><a href="<%=request.getContextPath()+"/CheckUser.waiter"%>">查询会员</a></li>
-		            <li><a href="<%=request.getContextPath()+"/ModifyPlan.waiter"%>">修改放映计划</a></li>
 		            
 		            
 		            </ul>
