@@ -44,17 +44,7 @@ public class Index extends HttpServlet {
 		request.setAttribute("newActivities", alist);
 		request.setAttribute("comingMovies", comingMovies);
 		
-		String level = (String)request.getSession(true).getAttribute("userlevel");
-		if(level == null)
-			request.getRequestDispatcher("pages/home.jsp").forward(request, response);
-		else if(level.equals("经理"))
-			request.getRequestDispatcher("/CheckPlan.manager").forward(request, response);
-		else if(level.equals("服务员")){
-			
-			request.getRequestDispatcher("/MovieList").forward(request,response);
-		}
-		else 
-			request.getRequestDispatcher("pages/home.jsp").forward(request, response);			
+		request.getRequestDispatcher("pages/home.jsp").forward(request, response);			
 	}
 
 	/**
