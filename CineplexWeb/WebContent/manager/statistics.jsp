@@ -98,6 +98,7 @@
 <script type="text/javascript" src="/CineplexWeb/js/highcharts.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$(".memberLab").addClass("active");
 	$('#age-chart').highcharts({
         chart: {
             plotBackgroundColor: null,

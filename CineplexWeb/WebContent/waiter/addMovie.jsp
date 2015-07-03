@@ -151,7 +151,7 @@
 <script type="text/javascript" src="/CineplexWeb/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-
+	$(".addMovieLab").addClass("active");
 });
 
 function checkMovie(){

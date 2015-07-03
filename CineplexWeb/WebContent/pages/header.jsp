@@ -26,9 +26,9 @@
 				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
 				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
 				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
-				<li><a href="<%=request.getContextPath()+"/CheckPlan.manager" %>">审查放映计划</a></li>
-				<li><a href="<%=request.getContextPath()+"/MemberStatistics.manager"%>">会员信息统计</a></li>
-		            <li><a href="<%=request.getContextPath()+"/MonthlyStatistics.manager"%>">影院使用统计</a></li>
+				<li class="checkPlanLab"><a href="<%=request.getContextPath()+"/CheckPlan.manager" %>">审查放映计划</a></li>
+				<li class="memberLab"><a href="<%=request.getContextPath()+"/MemberStatistics.manager"%>">会员信息统计</a></li>
+		        <li class="cineplexLab"><a href="<%=request.getContextPath()+"/MonthlyStatistics.manager"%>">影院使用统计</a></li>
 		        </ul>
 		        
 		        <ul class="nav navbar-nav navbar-right">
@@ -51,11 +51,10 @@
 				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
 				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
 				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
-				
-						            <li><a href="<%=request.getContextPath()+"/MakePlan.waiter"%>">制定放映计划</a></li>
-		            <li><a href="<%=request.getContextPath()+"/AddMovie.waiter"%>">添加影片</a></li>
-		            <li><a href="<%=request.getContextPath()+"/MakeActivity.waiter"%>">制定活动</a></li>
-		            <li><a href="<%=request.getContextPath()+"/CheckUser.waiter"%>">查询会员</a></li>
+				<li class="planLab"><a href="<%=request.getContextPath()+"/MakePlan.waiter"%>">制定放映计划</a></li>
+		        <li class="addMovieLab"><a href="<%=request.getContextPath()+"/AddMovie.waiter"%>">添加影片</a></li>
+		        <li class="makeActivityLab"><a href="<%=request.getContextPath()+"/MakeActivity.waiter"%>">制定活动</a></li>
+		        <li class="checkUserLab"><a href="<%=request.getContextPath()+"/CheckUser.waiter"%>">查询会员</a></li>
 		            
 		            
 		            </ul>
@@ -79,7 +78,7 @@
 				<li class="movieLab"><a href="<%=request.getContextPath()+"/MovieList" %>">电影</a></li>
 				<li class="activityLab"><a href="<%=request.getContextPath()+"/ActivityList" %>">活动</a></li>
 				<li class="helpLab"><a href="<%=request.getContextPath()+"/Help" %>">帮助</a></li>
-				<li><a href="<%=request.getContextPath()+"/PersonalInfo" %>">个人信息</a></li>
+				<li class="myInfoLab"><a href="<%=request.getContextPath()+"/PersonalInfo" %>">个人信息</a></li>
 		        </ul>
 		        
 		        

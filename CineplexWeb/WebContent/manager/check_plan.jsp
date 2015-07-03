@@ -63,6 +63,7 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
+	$(".checkPlanLab").addClass("active");
 });
 
 function deal(operation,planid){
