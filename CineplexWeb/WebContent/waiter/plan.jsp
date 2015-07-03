@@ -8,6 +8,7 @@
 <title>制定放映计划 - 最长的电影</title>
 <link href="/CineplexWeb/lib/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="/CineplexWeb/css/mystyle.css" rel="stylesheet" type="text/css" />
+<link href="/CineplexWeb/css/bootstrap-clockpicker.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <jsp:include page="/pages/header.jsp" flush="true" />
@@ -182,7 +183,12 @@
 				<input type="date" class="form-control" name="date" id="date" placeholder="yyyy-MM-dd" />
 			</div>
 			<div class="col-sm-4">
-				<input type="time" class="form-control" name="time" id="time" placeholder="HH:mm" />
+				<div class="input-group clockpicker">
+    				<input type="text" class="form-control" id="time" name="time">
+    				<span class="input-group-addon">
+        			<span class="glyphicon glyphicon-time"></span>
+    				</span>
+				</div>
 			</div>
 		</div>
 		<div class="form-group">
@@ -206,8 +212,10 @@
 
 <script type="text/javascript" src="/CineplexWeb/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="/CineplexWeb/lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/CineplexWeb/js/bootstrap-clockpicker.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$('.clockpicker').clockpicker();
 	$(".planLab").addClass("active");
 	<%
 		PlanItem plan = (PlanItem)request.getAttribute("plan");
