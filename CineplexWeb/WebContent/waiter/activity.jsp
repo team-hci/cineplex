@@ -116,7 +116,7 @@ var questionCount = 1;
 var numbers = ["一","二","三","四","五","六","七","八","九","十"];
 
 $(document).ready(function(){
-
+	$(".makeActivityLab").addClass("active");
 });
 
 function appendQuestion(){

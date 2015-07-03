@@ -98,6 +98,7 @@
 <script type="text/javascript" src="/CineplexWeb/js/highcharts.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$(".cineplexLab").addClass("active");
 	$("#year").val('<%=(int)request.getAttribute("showYear") %>');
 	$("#month").val('<%=(int)request.getAttribute("showMonth") %>');
 	
