@@ -15,17 +15,17 @@
 <div id="movie_detail" class="top-line div-gap row">
 	<div class="col-md-3 col-sm-4 col-xs-12 col-md-offset-1">
 		<img alt="" title="" src="<jsp:getProperty name="movieInfo" property="movieposter" />">
-		<div class="row">
+		<div class="row" style="margin-left: 10px;">
 		<%
 			int valuation = (int)request.getAttribute("valuation");
 			if(valuation>0){
 		%>
-		<span class="largegrade"><jsp:getProperty name="movieInfo" property="grade" /></span><span class="mylabel">（<jsp:getProperty name="movieInfo" property="gcount" />评分）</span>
+			<span class="largegrade"><jsp:getProperty name="movieInfo" property="grade" /></span><span class="mylabel">（<jsp:getProperty name="movieInfo" property="gcount" />评分）</span>
 			<span>已评<%=valuation %>分</span>
 		<%
 			}else if(session.getAttribute("userid")!=null){
 		%>
-			<form action="Evaluate" method="post" class="form-inline" style="margin-left: 20px;">
+			<form action="Evaluate" method="post" class="form-inline">
 			<span class="largegrade"><jsp:getProperty name="movieInfo" property="grade" /></span><span class="mylabel">（<jsp:getProperty name="movieInfo" property="gcount" />评分）</span>
 				<select class="form-control" id="valuation" name="valuation" style="width:100px">
 				  <option value="10">10分</option>
