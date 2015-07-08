@@ -31,6 +31,7 @@
 	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=42" title="沉睡魔咒"><img src="img/3.jpg"></a></li>
 	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=43" title="星际穿越"><img src="img/4.jpg"></a></li>
 	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=41" title="霍比特人"><img src="img/5.jpg"></a></li>
+	    <li><a href="<%=request.getContextPath() %>/MovieDetail?m=44" title="小时代4：灵魂尽头"><img src="img/6.jpg"></a></li>
 	  </ul>
 	</div>
   
