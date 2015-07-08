@@ -33,6 +33,7 @@
 		<div class="form-group">
 			<label for="option3" class="col-sm-2 control-label">匹配影片</label>
 			<div class="col-sm-9">
+			<% if(plans.size() > 0){ %>
 				<table class="table table-striped table-hover">
 					<tr>
 						<th>电影名称</th>
@@ -56,6 +57,9 @@
 						}
 					%>
 				</table>
+			<% } else { %>
+				<label class="mylabel" style="margin-top: 6px">暂无可匹配的影片</label>
+			<% } %>
 			</div>
 		</div>
 		

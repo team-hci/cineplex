@@ -23,7 +23,7 @@ public class ManagerDaoImpl extends BaseDaoImpl implements ManagerDao {
 	@Override
 	public List<PlanItem> getToBeCheckedPlan() {
 		// TODO Auto-generated method stub
-		Query query = em.createQuery("select new edu.nju.cineplex.utildata.PlanItem(p.planid,m.moviename,p.hall,p.plandate,p.plantime,p.planprice,p.movieid) from Plan p,Movie m where p.movieid=m.movieid and p.planpass=0 order by p.plantime desc");
+		Query query = em.createQuery("select new edu.nju.cineplex.utildata.PlanItem(p.planid,m.moviename,p.hall,p.plandate,p.plantime,p.planprice,p.movieid) from Plan p,Movie m where p.movieid=m.movieid and p.planpass=0 order by p.plandate asc, p.plantime asc");
 		return query.getResultList();
 	}
 

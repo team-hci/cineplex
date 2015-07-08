@@ -14,7 +14,7 @@
 <div>
 	<h2 class="bottom-line">帮助</h2>
 	
-	<p>
+	<p style="margin-left: 50px;padding-top:30px">
 		此系统实现用户在线订购电影票的服务。
 		<br /><br />
 		1. 新用户需凭借银行卡进行注册，每张银行卡只能注册一次。<br />
